@@ -2,13 +2,17 @@
 // README at: https://github.com/devcontainers/templates/tree/main/src/java-8
 {
 	"name": "Java 8",
-	"image": "mcr.microsoft.com/devcontainers/java:1-8-buster",
+	"dockerComposeFile": "docker-compose.yml",
+    "service": "app",
+    "workspaceFolder": "/workspace",
+
 	"features": {
 		"ghcr.io/devcontainers/features/java:1": {
 			"version": "none",
 			"installMaven": "true",
 			"installGradle": "false"
-		}
+		},
+		"ghcr.io/devcontainers/features/docker-in-docker:2": {}
 	},
 
 	// Configure tool-specific properties.
@@ -27,14 +31,18 @@
 				]
 			}
 		}
-	}
+	},
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	// "forwardPorts": [],
+	"forwardPorts": [ "pgadmin:8081" ],
+	"portsAttributes": {
+		"8081": {
+			"label": "pgAdmin",
+			"onAutoForward": "notify",
+			"requireLocalPort": true
+		}
+	}
 
 	// Use 'postCreateCommand' to run commands after the container is created.
 	// "postCreateCommand": "java -version",
-
-	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
-	// "remoteUser": "root"
 }
