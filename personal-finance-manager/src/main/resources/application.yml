@@ -8,5 +8,5 @@ spring:
     open-in-view: true
     hibernate:
       ddl-auto: create-drop
-      dialect: org.hibernate.dialect.PostgreSQL92Dialect
+      dialect: org.hibernate.dialect.PostgreSQLDialect
       show-sql: true

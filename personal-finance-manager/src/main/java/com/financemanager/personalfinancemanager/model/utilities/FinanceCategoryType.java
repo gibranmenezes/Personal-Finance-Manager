@@ -13,7 +13,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "finance_institution")
+@Table(name = "finance_category_type")
 public class FinanceCategoryType {
 
     @Id
