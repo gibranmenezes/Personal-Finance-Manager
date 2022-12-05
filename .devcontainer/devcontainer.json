@@ -6,6 +6,13 @@
     "service": "app",
     "workspaceFolder": "/workspace",
 
+	"extensions": [
+		"Pivotal.vscode-boot-dev-pack",
+		"vscjava.vscode-java-pack",
+		"ms-azuretools.vscode-docker",
+		"dracula-theme.theme-dracula"
+	],
+
 	"features": {
 		"ghcr.io/devcontainers/features/java:1": {
 			"version": "none",
@@ -28,7 +35,8 @@
 						"name": "JavaSE-1.8",
 						"path": "/usr/local/sdkman/candidates/java/current"
 					}
-				]
+				],
+				"workbench.colorTheme": "Dracula"
 			}
 		}
 	},
