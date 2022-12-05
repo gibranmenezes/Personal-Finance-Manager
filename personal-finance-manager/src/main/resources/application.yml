@@ -1,8 +1,13 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/postgres
+    url: jdbc:postgresql://db:5432/postgres
     username: postgres
     password: postgres
   jpa:
     hibernate:
+      database: postgresql
       ddl-auto: create-drop
+      dialect: org.hibernate.dialect.PostgreSQLDialect
+      auto_quote_keyword: true
+      show-sql: true
+      format_sql: true
