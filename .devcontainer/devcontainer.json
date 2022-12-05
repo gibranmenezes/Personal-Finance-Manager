@@ -9,6 +9,7 @@
 	"extensions": [
 		"Pivotal.vscode-boot-dev-pack",
 		"vscjava.vscode-java-pack",
+		"developersoapbox.vscode-springboot-snippets",
 		"ms-azuretools.vscode-docker",
 		"dracula-theme.theme-dracula"
 	],

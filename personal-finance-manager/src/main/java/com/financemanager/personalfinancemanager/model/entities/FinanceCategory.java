@@ -5,9 +5,17 @@ import java.time.LocalDate;
 import com.financemanager.personalfinancemanager.model.enums.FinanceGroup;
 import com.financemanager.personalfinancemanager.model.utilities.FinanceCategoryType;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @NoArgsConstructor
@@ -17,6 +25,7 @@ import lombok.Data;
 public class FinanceCategory {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     private Double value;
     private LocalDate dateEntry;
@@ -26,6 +35,6 @@ public class FinanceCategory {
     private FinanceCategoryType type;
     @ManyToOne
     private Account account;
-    @ManyToOne
+    @Enumerated(EnumType.STRING)
     private FinanceGroup financeGroup;
 }

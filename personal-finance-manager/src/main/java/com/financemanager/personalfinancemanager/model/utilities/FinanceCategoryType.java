@@ -1,6 +1,8 @@
 package com.financemanager.personalfinancemanager.model.utilities;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
@@ -13,8 +15,9 @@ import lombok.NoArgsConstructor;
 @Entity
 @Table(name = "finance_institution")
 public class FinanceCategoryType {
-    
+
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id; 
     private String type;    
 }
