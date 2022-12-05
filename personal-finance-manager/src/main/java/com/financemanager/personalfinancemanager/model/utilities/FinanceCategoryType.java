@@ -1,26 +1,20 @@
 package com.financemanager.personalfinancemanager.model.utilities;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Entity
+@Table(name = "finance_institution")
 public class FinanceCategoryType {
     
-   private Integer id; 
-    
-    private String type;
-    
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    
+    @Id
+    private Integer id; 
+    private String type;    
 }

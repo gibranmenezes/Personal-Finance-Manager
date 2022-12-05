@@ -2,60 +2,28 @@ package com.financemanager.personalfinancemanager.model.entities;
 
 import com.financemanager.personalfinancemanager.model.utilities.AccountType;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Entity
+@Table(name = "account")
 public class Account {
     
-    //#region Attributes
+    @Id
     private Integer id;
-
     private Integer number;
-
+    @ManyToOne
     private AccountType type;
-
     private Double balance;
-
+    @ManyToOne
     private FinanceInstitution financeInstitution;
-    //#endregion
-
-    //#region getters and setters
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public Integer getNumber() {
-        return number;
-    }
-
-    public void setNumber(Integer number) {
-        this.number = number;
-    }
-
-    public AccountType getType() {
-        return type;
-    }
-
-    public void setType(AccountType type) {
-        this.type = type;
-    }
-
-    public Double getBalance() {
-        return balance;
-    }
-
-    public void setBalance(Double balance) {
-        this.balance = balance;
-    }
-
-    public FinanceInstitution getFinanceInstitution() {
-        return financeInstitution;
-    }
-
-    public void setFinanceInstitution(FinanceInstitution financeInstitution) {
-       this.financeInstitution = financeInstitution;
-    }
-    //#endregion
-    
 }
